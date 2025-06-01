@@ -14,9 +14,10 @@ import {
 } from "../src/utils/SessionHandlerUtils";
 
 // Define API_BASE_URL at the top of the file
-export const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "https://deb1-202-168-85-127.ngrok-free.app/";
+export const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "https://deb1-202-168-85-127.ngrok-free.app";
 
 const App = () => {
+  
   const [sessions, setSessions] = useState<string[]>([]);
   const [selectedSession, setSelectedSession] = useState<string | null>(null);
   const [showPopup, setShowPopup] = useState(false);
@@ -38,6 +39,7 @@ const App = () => {
     fetchSessions();
   }, []);
 
+  
   // Fetch graph when session changes
   useEffect(() => {
     if (!selectedSession) {
@@ -46,8 +48,11 @@ const App = () => {
       setRfEdges([]);
       return;
     }
+
+    
     setLoadingGraph(true);
 
+    
     fetch(`${API_BASE_URL}/get-session-graph`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -71,6 +76,7 @@ const App = () => {
       .finally(() => setLoadingGraph(false));
   }, [selectedSession]);
 
+  
   // Session handlers now use the utility functions
   const handleCreateSession = () =>
     handleCreateSessionUtil(setPopupMsg, setPopupError, setShowPopup, fetchSessions);
