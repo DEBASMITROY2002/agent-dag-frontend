@@ -14,7 +14,7 @@ import {
 } from "../src/utils/SessionHandlerUtils";
 
 // Define API_BASE_URL at the top of the file
-export const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://127.0.0.1:8080/";
+export const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "https://6239-202-168-85-114.ngrok-free.app/";
 
 const App = () => {
   
