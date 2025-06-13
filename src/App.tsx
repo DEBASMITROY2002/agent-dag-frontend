@@ -14,7 +14,7 @@ import {
 } from "../src/utils/SessionHandlerUtils";
 
 // Define API_BASE_URL at the top of the file
-export const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "https://6239-202-168-85-114.ngrok-free.app/";
+export const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "https://agent-builder-185503944098.us-central1.run.app/";
 
 const App = () => {
   
